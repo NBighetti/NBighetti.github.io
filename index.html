@@ -1,31 +1,25 @@
-<html>
+---
+layout: default
+---
 
-  <head>
-    <title>Luna the Sea Otter's Page!</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <header>
-      Meet Luna the Otterly Adorable Sea Pup
-      <img src="http://dailyotter.org/wp-content/uploads/2015/01/Hi-Human.jpg">
-      </header>
-    <section>
-      <div id="column1">
-        Luna the otter pup, formerly know as Pup 681, was
-        abandoned by her mother and found all alone at a
-        California beach in early November 2014. She is now exploring the
-        habitat in her new home, the Shedd Aquarium.
-      </div>
-      <div id="column2">
-        Luna has already mastered swimming on her tummy
-        and back, according to the aquarium, and can
-        dive. She can now use her flipper to play and
-        propel her around the special 1,249-gallon private
-        nursery pool she calls home. She's so adorable!!
-      </div>
-    </section>
+<div class="home">
 
-    <footer>
-      &copy; 2015 alicewu@aol.com
-    </footer>
-</html>
+  <h1 class="page-heading">Projects</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <span class="post-meta">{{ post.description | date: "%b %-d, %Y" }}</span>
+
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
